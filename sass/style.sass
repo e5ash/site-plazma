@@ -1,0 +1,1276 @@
+@font-face
+	src: url('../fonts/MyriadPro-Light.ttf')
+	font-family: "Myriad Pro"
+	font-weight: 300
+
+@font-face
+	src: url('../fonts/MyriadPro-Regular.otf')
+	font-family: "Myriad Pro"
+	font-weight: normal
+
+@font-face
+	src: url('../fonts/MyriadPro-Semibold.otf')
+	font-family: "Myriad Pro"
+	font-weight: 600
+
+@font-face
+	src: url('../fonts/MyriadPro-Bold.otf')
+	font-family: "Myriad Pro"
+	font-weight: 700
+
+
+@import sprite.sass
+
+$c-black: #4d4f52
+$c-white: #fff
+$font-size: 18px
+$font-family: 'Myriad Pro', sans-serif
+$zIndex-popup: 1000
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $font-size $font-family
+	color: $c-black
+	background: $c-white
+	box-sizing: border-box
+	font-weight: 300
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button
+	display: block
+
+meta, script, style
+	display: none
+
+h1, h2, h3, h4, h5, h6
+	font-weight: normal 
+
+
+h1, h2
+	font-size: 40px
+	color: #2a2e31
+	font-size: 40px
+	font-weight: normal
+	&:after
+		content: ''
+		position: relative
+		display: block
+		width: 45px
+		height: 2px
+		background: #299EC1
+		margin-bottom: 10px
+h3
+	font-size: 17px
+	text-transform: uppercase
+	font-weight: 600
+h4
+	font-size: 22px
+	font-weight: 600
+	color: #148bae
+h5
+	font-size: 18px
+	color: #2a2e31
+	font-weight: 600
+	&:after
+		content: ''
+		display: block
+		width: 5px
+		height: 18px
+		margin-top: 3px
+		margin-bottom: 3px
+		margin-left: 10px
+		background-image: url("../img/dot.png")
+
+
+
+h6
+	font-size: 10px
+
+a
+	color: $c-black
+	text-decoration: none
+
+.a-callback
+	border-bottom: 2px solid #cce4eb
+
+
+ul, ol
+	margin: 0
+
+
+li
+	display: inline-block
+	list-style: none
+
+
+::placeholder
+	color: #cce4eb
+
+
+.t-left
+	text-align: left
+
+.t-center
+	text-align: center
+
+.t-right
+	text-align: right
+
+.t-italic
+	font-style: italic
+
+.t-bold
+	font-weight: bold
+
+
+
+
+
+// Grid
+.container
+	position: relative
+	max-width: 1024px
+	margin: 0 auto
+
+.row, .clearfix, .news-last__item, .news__item, .page
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+.col
+	display: block
+	float: left
+	min-height: 1px
+
+.b-left
+	float: left
+
+.b-right
+	float: right
+
+.mb15
+	margin-bottom: 15px
+
+.pl150
+	padding-left: 150px
+	box-sizing: border-box
+
+// Form
+
+.input, .textarea, .button
+	display: block
+	outline: none
+	font-size: 12px
+	font-family: $font-family
+	width: 100%
+	box-sizing: border-box
+	background: transparent
+
+.checkbox, .radio, .button, .checkbox__label, .radio__label
+	cursor: pointer
+
+.checkbox, .radio
+	input
+		display: none
+
+
+.input
+	padding: 4px 10px
+	border: 1px solid #cce4eb
+	padding: 8.2px 14px
+
+.input_blue
+	color: #68C8E4
+	font-size: 18px
+	font-weight: 300
+	border: 1px solid #68C8E4
+
+
+.checkbox
+
+
+.checkbox__input:checked + .checkbox__label
+	border: 1px solid red
+
+
+.checkbox__label
+	width: 40px
+	height: 40px
+	display: block
+	cursor: pointer
+	border: 1px solid #787878
+
+
+
+.radio
+	position: relative
+
+.radio__label
+
+
+
+.button
+	border: none
+	text-align: center
+	color: $c-white
+
+.button_default
+	display: inline-block
+	padding: 10px 30px
+	border: 2px solid #3ABBB6
+	color: $c-black
+	width: auto
+	font-size: 16px
+	&:hover
+		background: #3ABBB6
+		color: white
+
+.button_blue
+	background: #3CBCB6
+	width: 210px
+	margin-left: auto
+	margin-right: auto
+	font-size: 16px
+	font-weight: normal
+	line-height: 40px
+
+.textarea
+	resize: none
+
+.textarea_blue
+	font-size: 18px
+	font-weight: 300
+	color: #68C8E4
+	border: 1px solid #68C8E4
+	height: 95px
+	padding: 10px 14px
+
+
+
+// Elements
+	// Popup
+.popup
+    display: none
+
+.popup, .popup__bg
+    z-index: $zIndex-popup
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.popup__window
+    z-index: $zIndex-popup + 2
+    position: relative
+    width: 400px
+    height: 300px
+    margin-left: auto
+    margin-right: auto
+    background: $c-white
+
+.popup__container
+    height: 100%
+
+.popup__title
+    text-align: center
+
+.popup__close
+    position: absolute
+    top: 0
+    right: 0
+    width: 20px
+    height: 20px
+
+.popup__bg
+    z-index: $zIndex-popup + 1
+    position: fixed
+    background: rgba(0, 0, 0, .3)
+
+
+
+
+
+
+// Breadcrumb
+.breadcrumb
+	color: #2a2e31
+	font-size: 17px
+	padding-top: 31px
+	padding-bottom: 20px
+	a
+		color: #2a2e31
+.breadcrumb__item
+	margin-left: -4px
+	&:after
+		content: '|'
+		margin-left: 20px
+		margin-right: 20px
+	&:first-of-type
+		margin-left: 0
+		&:before
+			display: inline-block
+			content: ''
+			margin-right: 10px
+			@include sprite($house)
+	&:last-of-type
+		&:after
+			content: ''
+
+.breadcrumb__item-a
+	// border-bottom: 1px solid $c-black
+	transition: .3s
+	&:hover
+		color: #787878
+		border-bottom: 1px solid #787878
+
+
+
+
+// Header
+.panel
+	font-size: 16px
+	color: #cce4eb
+	background: #299EC1
+	line-height: 39px
+	a
+		color: #cce4eb
+	.icon-phone-white
+		position: relative
+		top: -2px
+.panel__socials
+	float: left
+	a
+		display: inline-block
+		margin-right: 9px
+
+.panel__contacts, .panel__search
+	float: right
+
+
+.search
+	font-size: 15px
+	margin-right: 170px
+
+.search__input
+	color: white
+	width: 235px
+
+.search__button
+	width: auto
+	margin-left: 5px
+
+.search__input, .search__button
+	display: inline-block
+
+
+.panel__contacts
+	i
+		margin-right: 10px
+
+	li
+		margin-left: 32px
+
+
+
+// nav
+.nav
+	padding: 20px 0
+.nav__logo
+.nav__list
+	float: right
+	ul
+		> li
+			position: relative
+			margin-left: 20px
+			font-size: 17px
+			> a
+				padding-bottom: 19px
+				border-bottom: 2px solid transparent
+					
+			&:hover, &.select
+				> a
+					border-bottom: 2px solid #3ABBB6
+			&:hover
+				> ul
+					display: block
+		ul
+			z-index: 10
+			display: none
+			position: absolute
+			top: 41px
+			background: #299EC1
+			width: 240px
+			// padding-top: 3px
+			padding-bottom: 5px
+			li
+				display: block
+				margin-left: 0
+				font-size: 16px
+				&:hover, &.select
+					a
+						background: #64B4CB
+						border-bottom: 0
+						&:before
+							content: ''
+							position: absolute
+							left: 0
+							top: -1px
+							height: 1px
+							width: 100%
+							background: #64B4CB
+				a
+					position: relative
+					display: block
+					padding: 6.5px 15px
+					color: white
+					border-bottom: 0
+					&:after
+						content: ''
+						position: absolute
+						left: 12.5px
+						bottom: 0
+						height: 1px
+						width: 215px
+						background: #64B4CB
+				&:first-of-type
+					a
+						&:before
+							display: none
+				&:last-of-type
+					a
+						&:after
+							display: none
+
+
+
+
+// Banner
+.banner
+	position: relative
+	width: 100%
+	height: 500px
+	color: white
+	text-transform: uppercase
+	text-align: center
+	font-weight: normal
+	font-size: 30px
+	background: url('../img/bg/banner.jpg') no-repeat top center
+	background-size: cover
+	
+.banner__description
+	padding-top: 180px
+	position: relative
+	margin-bottom: 5px
+	&:before, &:after
+		position: relative
+		display: inline-block
+		content: ''
+		width: 48px
+		height: 2px
+		top: 4px
+		background: #299EC1
+		vertical-align: top
+		margin: 13px
+.banner__title
+	font-size: 66px
+	color: #01abdb
+	font-weight: 700
+	&:after
+		display: none
+
+
+// Nums
+
+.num
+	position: absolute
+	opacity: 0.5
+	vertical-align: middle
+	top: 200px
+	right: -162px
+	transform: rotate(90deg)
+	span, p
+		display: inline-block
+		vertical-align: middle
+	span
+		width: 10px
+		height: 10px
+		background: #D6DADD
+		border-radius: 50%
+		margin: 0 4.5px
+	p
+		color: #20a0c5
+		font-size: 60.19px
+		font-weight: normal
+		margin: 0 !important
+		&:before, &:after
+			position: relative
+			content: ''
+			display: inline-block
+			vertical-align: middle
+			width: 16px
+			height: 2px
+			background: #D6DADD
+			top: -6px
+			margin: 0 10px
+
+
+// Main
+#main
+	position: relative
+.bg
+	background: url('../img/main/right-2.png') right top no-repeat, url('../img/main/right-1.png') right top no-repeat, url('../img/main/right-3.png') right 860px no-repeat, url('../img/main/right-4.png') right 1300px no-repeat, url('../img/main/left-2.png') left 960px no-repeat, url('../img/main/left-1.png') left 600px no-repeat, url('../img/main/left-3.png') left 2180px no-repeat, url('../img/main/left-4.png') left 1965px no-repeat
+
+.abs
+	position: relative
+	*
+		position: absolute
+.left-1
+	position: absolute
+	top: 600px
+	left: 0
+	background: url('../img/abs/left-1.png') left top no-repeat
+	width: 156px
+	height: 584px
+
+.left-2
+	position: absolute
+	top: 960px
+	left: 0
+	background: url('../img/abs/left-2.png') left top no-repeat
+	width: 291px
+	height: 510px
+
+.left-3
+	position: absolute
+	z-index: 1
+	bottom: 0
+	left: 0
+	background: url('../img/abs/left-3.png') left top no-repeat
+	width: 284px
+	height: 229px
+
+.left-4
+	position: absolute
+	bottom: 0
+	left: 0
+	background: url('../img/abs/left-4.png') left top no-repeat
+	width: 167px
+	height: 313px
+
+.right-1
+	position: absolute
+	top: 0
+	right: 0
+	background: url('../img/abs/right-1.png') right top no-repeat
+	width: 564px
+	height: 306px
+
+.right-2
+	position: absolute
+	top: -34px
+	right: 0
+	background: url('../img/abs/right-2.png') right top no-repeat
+	width: 216px
+	height: 629px
+
+.right-3
+	position: absolute
+	z-index: 1
+	top: 780px
+	right: 0
+	background: url('../img/abs/right-3.png') right top no-repeat
+	width: 185px
+	height: 660px
+
+.right-4
+	position: absolute
+	top: 1250px
+	right: 0
+	background: url('../img/abs/right-4.png') right top no-repeat
+	width: 234px
+	height: 360px
+
+// main-img
+.main-img
+	width: 320px
+	height: 560px
+	position: relative
+	top: 10px
+.main-img__img
+	-webkit-clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%)
+	clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%)
+
+.main-img__img_1
+	position: absolute
+	top: 0
+	left: 0
+
+.main-img__img_2
+	position: absolute
+	top: 325px
+	left: 162px
+
+.main-img_right
+	float: right
+	right: -45px
+
+
+// About
+.about
+	padding-top: 40px
+	h2
+		margin-bottom: 50px
+	p
+		margin-bottom: 20px
+	strong
+		font-weight: 600
+.about__img
+	position: relative
+	left: -45px
+
+.about__text
+	float: right
+	width: 685px
+
+.about__buttons
+	margin-top: 55px
+	text-align: center
+	.button
+		margin: 0 15.5px
+
+.about__num
+	top: 275px
+
+
+
+// application
+
+.application
+	padding-top: 65px
+	h2
+		margin-bottom: 55px
+
+// Icons
+.icons
+	text-align: center
+	.col
+		position: relative
+.icons__wrapp
+	width: 163px
+	height: 186px
+	margin-left: auto
+	margin-right: auto
+	background: url('../img/icon-wrap.png') center top no-repeat
+	&:before
+		opacity: 0
+		position: relative
+		content: ''
+		display: block
+		width: 158px
+		height: 108px
+		top: -10px
+		left: 2px
+		background: url('../img/icon-wrap-on-hover-element.png') center top no-repeat
+		margin-bottom: -30px
+.icons__link
+	&:hover
+		.icons__wrapp
+			&:before
+				opacity: 1
+
+.icons__text
+	&:before
+		display: block
+		content: ''
+		width: 4px
+		height: 28px
+		margin-top: 5px
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 10px
+		background: url('../img/icon-dots.png') center top no-repeat
+
+
+// Application
+.application
+	border-bottom: 1px solid #E0F4F3
+	padding-bottom: 45px
+.application__num
+	top: 225px
+
+
+// news-last
+
+.news-last
+	padding-top: 45px
+	padding-bottom: 40px
+	h2
+		margin-bottom: 50px
+	h3
+		padding: 10px 18px
+		&:after
+			content: ''
+			display: block
+			width: 65px
+			height: 1px
+			margin: 7px 0 0
+			background: #299EC1
+	i.icon-calendar
+		position: relative
+		top: -2px
+		margin-right: 5px
+
+.news-last__num
+	top: 205px
+
+.news-last__item
+	position: relative
+	display: block
+	&:hover
+		background: #F4F6F6
+		i.icon-btn-more-default
+			@include sprite($btn-more-hover)
+
+.news-last__img
+	float: left
+	margin-right: 18px
+	+ h3
+		padding-top: 25px
+		text-align: center
+		&:after
+			float: right
+			width: 235px
+		+ .news-last__text
+			margin-top: 10px
+			text-align: center
+			+ .news-last__date
+				position: absolute
+				bottom: -5px
+				left: 240px
+				+ .icon-btn-more-default
+					right: 125px
+					bottom: 30px
+.news-last__text
+	margin-bottom: 5px
+	padding-left: 18px
+	padding-right: 18px
+
+
+.news-last__date
+	margin-top: 2px
+	font-size: 14.4px
+	color: #a4a9ae
+	padding-left: 18px
+	padding-right: 18px
+	padding-bottom: 21px
+
+.icon-btn-more-default
+	position: absolute
+	bottom: 18px
+	right: 18px
+
+.news
+	h1
+		margin-top: 5px
+		margin-bottom: 5px
+	h3
+		&:after
+			content: ''
+			display: block
+			width: 285px
+			height: 1px
+			margin: 10px 0
+			background: #299EC1
+	h3, p
+		float: left
+		width: 630px
+	.news__img
+		float: left
+		margin-right: 25px
+
+.news__item
+	float: left
+	display: block
+	position: relative
+	padding-top: 35px
+	padding-bottom: 40px
+	.icon-btn-more-default
+		bottom: 33px
+	&:hover
+		i.icon-btn-more-default
+			@include sprite($btn-more-hover)
+
+	&:nth-of-type(3n+1)
+		width: 100%
+		border-top: 1px solid #E0F4F3
+		border-bottom: 1px solid #E0F4F3
+	&:nth-of-type(3n+2), &:nth-of-type(3n+3)
+		width: 50%
+		box-sizing: border-box
+		h3, p
+			width: auto
+		&:before
+			content: ''
+			@include sprite($newspaper)
+			position: absolute
+			top: 40px
+			left: 0
+	&:nth-of-type(3n+2)
+		padding-left: 55px
+		padding-right: 30px
+		&:after
+			position: absolute
+			display: block
+			content: ''
+			height: 90%
+			width: 1px
+			background: #E0F4F3
+			top: 5%
+			right: -10px
+
+
+	&:nth-of-type(3n+3)
+		padding-left: 85px
+		&:before
+			left: 30px
+
+	&:first-of-type
+		border-top: none
+
+.news__date
+	margin-top: 30px
+	font-size: 14.4px
+	color: #a4a9ae
+	i
+		position: relative
+		top: -2px
+		margin-right: 10px
+
+.news__button
+	display: block
+	margin-left: auto
+	margin-right: auto
+	margin-top: 20px
+	margin-bottom: 35px
+	width: 200px
+
+// form
+.form	
+	z-index: 2
+	position: relative
+	padding-top: 35px
+	background: url('../img/bg/form.jpg') center top no-repeat
+	background-size: cover
+	padding-bottom: 45px
+	h2
+		color: white
+		margin-bottom: 55px
+	.input
+		margin-bottom: 14px
+	::placeholder
+		color: #68C8E4
+	.left
+		padding-right: 8px
+	.right
+		padding-left: 8px
+
+	.left, .right
+		box-sizing: border-box
+
+	.button
+		display: block
+		color: #66cae7
+		border: 1px solid #66cae7
+		margin-left: auto
+		margin-right: auto
+		padding-left: 70px
+		padding-right: 70px
+		&:hover
+			color: white
+			border: 1px solid #3CBCB6
+
+.form__num
+	top: 80px
+
+
+.contacts
+	padding-top: 35px
+	padding-bottom: 55px
+	background: url('../img/bg/contacts.png') right top no-repeat
+	h1, h2
+		margin-bottom: 50px
+	p
+		margin-bottom: 12px
+	.nameorg
+		margin-bottom: 20px
+
+	.sn
+		margin-top: 20px
+		i
+			margin: 7px
+	.feedback
+		font-size: 16px
+		border-bottom: 1px solid $c-black
+		margin-left: 10px
+.contacts__i-wrap
+	display: inline-block
+	width: 25px
+	margin-right: 10px
+
+.footer
+	position: relative
+	background: #F4F6F6
+
+.footer__logo
+	padding-top: 32px
+	padding-bottom: 32px
+	margin-right: 155px
+
+.footer__nav
+	padding-top: 22px
+	padding-bottom: 22px
+	ul
+		position: relative
+		float: left
+		padding-right: 22px
+		padding-left: 22px
+		&:after
+			position: absolute
+			display: block
+			content: ''
+			height: 55px
+			width: 1px
+			background: #D1ECEB
+			right: 0
+			top: -5px
+		&:last-of-type
+			&:after
+				display: none
+
+	li
+		display: block
+	a
+		color: #7c8083
+		&:hover
+			color: #33bdb8
+
+.footer__contacts
+	float: right
+	padding-top: 22px
+	color: #7c8083
+	text-align: center
+	font-size: 16px
+	a
+		color: #7c8083
+	i
+		position: relative
+		margin-right: 10px
+		top: -2px
+	.a-callback
+		color: #7c8083
+		border-bottom: 1px solid #7c8083
+		margin-left: 25px
+
+.subpage
+	h1
+
+	.nav
+		background: #F4F6F6
+
+.page
+	min-height: 400px
+	.text
+		margin-top: 45px
+		strong
+			font-weight: 600
+
+	.main-img_sub
+		.main-img__img_2
+			top: 274px
+			left: 140px
+
+.block
+	padding-top: 22px
+	padding-bottom: 25px
+	h4
+		margin-bottom: 20px
+
+.block_line-before
+	border-bottom: 1px solid #E0F4F3
+
+.list
+	.item
+		margin-bottom: 7px
+	span
+		font-size: 13px
+		text-align: center
+		display: inline-block
+		@include sprite($li)
+		box-sizing: border-box
+		padding-top: 4px
+		vertical-align: top
+		margin-right: 16px
+		margin-top: 3px
+	p
+		display: inline-block
+		line-height: 30px
+
+.table
+	text-align: center
+	border-collapse: collapse
+	margin-top: 30px
+	margin-bottom: 30px
+	th
+		background: #299EC1
+		color: white
+		font-weight: 600
+		padding-top: 7px
+		padding-bottom: 7px
+		border: 1px solid #299EC1
+	td
+		border: 1px solid #299EC1
+		padding: 5px 20px
+
+
+
+
+strong
+	font-weight: 600
+
+.gelios__branch
+	.right
+		padding-left: 73px
+		box-sizing: border-box
+	.list
+		.item
+			position: relative
+			&.item-1
+				margin-top: 22px
+				&:after
+					content: ''
+					display: block
+					width: 5px
+					height: 28px
+					margin-top: 5px
+					margin-left: 120px
+					background-image: url("../img/dot.png")
+			&.item-2
+				&:after
+					content: ''
+					display: block
+					width: 5px
+					height: 60.2px
+					margin-top: -19px
+					margin-left: 120px
+					background-image: url("../img/dot.png")
+			&.item-3
+				&:after
+					position: absolute
+					content: ''
+					display: block
+					width: 590px
+					height: 5px
+					margin-top: -152px
+					margin-left: 10px
+					background-image: url("../img/dot.png")
+			&.item-4
+				&:after
+					position: absolute
+					content: ''
+					display: block
+					width: 5px
+					height: 115px
+					margin-top: -184px
+					margin-left: 10px
+					background-image: url("../img/dot.png")
+			&.item-8
+				&:after
+					position: absolute
+					content: ''
+					display: block
+					width: 5px
+					height: 115px
+					margin-top: -183px
+					margin-left: 10px
+					background-image: url("../img/dot.png")
+
+
+.gelios__branch-imgs
+	float: left
+	width: 80px
+	margin-right: 30px
+	img
+		display: block
+		margin-left: auto
+		margin-right: auto
+		margin-bottom: 20px
+
+.gelios__branch-col-img
+	display: block
+	margin-left: auto
+	margin-right: auto
+	margin-bottom: 22px
+
+.gelios__data
+	.row
+		margin-bottom: 20px
+
+.gelios__icons
+	.list
+		text-align: left
+	.icons__text
+		font-size: 20px
+		text-align: center
+		margin-top: 10px
+		margin-bottom: 25px
+	img
+		// display: block
+		margin-top: 22px
+
+
+.gelios__result
+	padding-bottom: 50px
+	// text-align: center
+	h5
+		margin-bottom: 20px
+		&:after
+			display: none
+	h6
+		text-align: center
+		font-size: 18px
+		font-weight: 300
+		&:after
+			content: ''
+			display: block
+			width: 5px
+			height: 18px
+			margin-top: 5px
+			margin-bottom: 5px
+			margin-left: auto
+			margin-right: auto
+			background-image: url("../img/dot.png")
+	.col
+		.col
+			width: 175px
+
+	.col-left
+		padding-right: 30px
+		box-sizing: border-box
+		.left
+			padding-right: 65px
+	.col-right
+		padding-left: 30px
+		box-sizing: border-box
+		.right
+			padding-left: 65px
+
+.ecoplas__principle
+
+.ecoplas__principle-img
+	width: 240px
+	img
+		display: block
+		margin-bottom: 50px
+		margin-left: auto
+		margin-right: auto
+		&:last-of-type
+			margin-bottom: 0
+
+.ecoplas__principle-list
+	float: right
+	width: 765px
+	margin-top: -190px
+	.item
+		&.item-2
+			&:after
+				content: ''
+				display: block
+				width: 5px
+				height: 35px
+				margin-top: 5px
+				margin-bottom: 5px
+				margin-left: 9px
+				background-image: url("../img/dot.png")
+		&.item-4
+			&:after
+				content: ''
+				display: block
+				width: 5px
+				height: 54px
+				margin-top: -25px
+				margin-bottom: 5px
+				margin-left: 9px
+				background-image: url("../img/dot.png")
+		&.item-6
+			&:after
+				content: ''
+				display: block
+				width: 5px
+				height: 65px
+				margin-top: -25px
+				margin-bottom: 5px
+				margin-left: 9px
+				background-image: url("../img/dot.png")
+		&.item-7
+			&:after
+				content: ''
+				display: block
+				width: 5px
+				height: 94px
+				margin-top: -25px
+				margin-bottom: 5px
+				margin-left: 9px
+				background-image: url("../img/dot.png")
+.ecoplas__comparison
+	.table
+		i.icon
+			display: block
+			margin-left: auto
+			margin-right: auto
+		td
+			padding-left: 10px
+			padding-right: 10px
+			&:nth-of-type(2)
+				width: 35%
+				text-align: left
+			&:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5)
+				width: 12%
+
+.t-comparison__img
+	display: block
+	+ span
+		display: block
+		padding-top: 33px
+	&.left
+		float: left
+		margin-right: 25px
+		
+	&.right
+		float: right
+		margin-left: 25px
+	&.this
+		+ span
+			padding-top: 43px
+
+
+
+.hexagon
+	-webkit-clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%)
+	clip-path: polygon(50% 0, 0 25%, 0 75%, 50% 100%, 100% 75%, 100% 25%)

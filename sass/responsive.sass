@@ -1,0 +1,448 @@
+button#sticks
+	position: absolute
+	display: none
+	top: -10px
+	right: 15px
+	width: 40px
+	height: 40px
+	background: none
+	border: none
+	outline: none
+	cursor: pointer
+	span
+		display: block
+		position: relative
+		width: 35px
+		height: 4px
+		background: #412824
+		margin-left: auto
+		margin-right: auto
+		transition: .5s
+		&:nth-of-type(2)
+			margin: 6px auto
+button#sticks.close
+	span
+		&:nth-of-type(1)
+			transform: rotate(135deg)
+		&:nth-of-type(2)
+			display: none
+		&:nth-of-type(3)
+			margin-top: -4px
+			transform: rotate(-135deg)
+@media screen and (max-width: 1900px)
+	.contacts
+		background: url("../img/bg/contacts.png") 115% top no-repeat
+
+@media screen and (max-width: 1700px)
+	.left-1, .left-2, .left-3, .left-4, .right-1, .right-2, .right-3, .right-4
+		display: none
+
+	.contacts
+		background: url("../img/bg/contacts.png") 130% top no-repeat
+
+
+@media screen and (max-width: 1550px)
+	.contacts
+		background: url("../img/bg/contacts.png") 150% top no-repeat
+
+
+@media screen and (max-width: 1425px)
+	.contacts
+		background: url("../img/bg/contacts.png") 180% top no-repeat
+
+@media screen and (max-width: 1325px)
+	.contacts
+		background: url("../img/bg/contacts.png") 220% top no-repeat
+
+@media screen and (max-width: 1235px)
+	.contacts
+		background: url("../img/bg/contacts.png") 280% top no-repeat
+
+@media screen and (max-width: 1200px)
+	.num
+		display: none
+	.about__img
+		zoom: 0.8
+		left: 0
+@media screen and (max-width: 1160px)
+	.contacts
+		background: url("../img/bg/contacts.png") 340% top no-repeat
+
+
+@media screen and (max-width: 1115px)
+	.contacts
+		background: url("../img/bg/contacts.png") 420% top no-repeat
+	.main-img_right
+		right: 0
+@media screen and (max-width: 1080px)
+	.contacts
+		background: url("../img/bg/contacts.png") 580% top no-repeat
+
+
+@media screen and (max-width: 1040px)
+	h1, h2
+		font-size: 30px
+	h2
+		&:after
+			margin-top: 10px
+	button#sticks
+		display: block
+	.container
+		padding-left: 15px
+		padding-right: 15px
+	.search
+		margin-right: 0
+
+	.nav__list
+		display: none
+		z-index: 10
+		position: absolute
+		top: 38px
+		left: 0
+		background: #F4F6F6
+		width: 100%
+		padding: 15px
+		box-sizing: border-box
+		ul
+			> li
+				display: block
+				font-size: 20px
+				margin-left: 0
+				margin-bottom: 5px
+				a
+					border-bottom: none !important
+				> ul
+					display: block
+					position: relative
+					top: 0
+					left: 0
+					background: none !important
+					color: #4d4f52
+					font-size: 18px
+					width: auto
+					padding-bottom: 0
+					margin: 7px 0 2px 20px
+					li
+				
+					a
+						font-size: 18px
+						padding: 0
+						color: #4d4f52
+						background: none !important
+						&:after, &:before
+							display: none !important
+	.contacts
+		padding-top: 0
+		padding-bottom: 42%
+		background: url("../img/bg/contacts.png") 0 bottom no-repeat
+		background-size: 100%
+		h1
+			margin-bottom: 20px
+
+	.breadcrumb
+	.about__img
+		display: none
+	.about__text
+		width: 100%
+	.about__buttons
+		.button
+			margin-bottom: 20px
+			margin-left: 20px !important
+			margin-right: 20px !important
+			width: 300px
+	
+	.icons
+		text-align: center
+		.col
+			float: none
+			display: inline-block
+			width: 30%
+			margin-bottom: 40px
+		&.w4
+			.col
+				width: 30%
+		&.w3
+			.col
+				width: 45%
+				vertical-align: top
+		.list
+			width: 280px
+			margin-left: auto
+			margin-right: auto
+			br
+				display: none
+			span
+				display: none
+	.application
+		padding-bottom: 10px
+	.news-last
+		.col
+			width: 100%
+		img
+			display: none
+	.news-last__img
+		+ h3
+			text-align: left
+			&:after
+				float: none
+				width: 65px
+			+ .news-last__text
+				margin-top: 0
+				text-align: left
+				+ .news-last__date
+					position: relative
+					bottom: auto
+					left: auto
+					+ .icon-btn-more-default
+					 	bottom: 18px
+					 	right: 18px
+	.footer__logo
+		margin-right: 0
+	.footer__nav
+		display: none
+
+	.form + .contacts
+		margin-top: 25px
+	.news__item
+		width: 100% !important
+		padding-left: 0 !important
+		border-top: none
+		border-bottom: 1px solid #E0F4F3
+		&:nth-of-type(3n+1)
+			box-sizing: border-box
+			h3, p
+				width: auto
+			&:before
+				content: ''
+				position: absolute
+				top: 40px
+				left: 0
+		&:before, &:after
+			display: none !important
+ 
+	.news__img
+		display: none
+	
+	.main-img
+		display: none
+	
+	.ecoplas__principle-img
+		text-align: center
+		width: 100%
+		img
+			display: inline-block
+			margin: 0
+			&:last-of-type
+				display: none
+	.ecoplas__principle-list
+		float: none
+		width: 100%
+		margin-top: 20px
+	.ecoplas__comparison
+		.table
+			td, th
+				&:nth-of-type(2)
+					display: none
+			td
+				&:nth-of-type(1)
+					// text-align: left
+			+ .row
+				.left
+					float: none
+					img
+						display: block
+						margin-left: auto
+						margin-right: auto
+						margin-bottom: 20px
+				.right
+					float: none
+				+ .row
+					.col
+						float: none
+						> p
+							margin-top: 20px
+						br
+							display: none
+	.pl150
+		padding-left: 0
+	.t-comparison__img 
+		display: none
+		+ span
+			padding-top: 0 !important
+
+	.ecoplas__sphere
+		.col
+			// width: 50%
+			padding-left: 5px
+			padding-right: 5px
+			box-sizing: border-box
+		.item
+			span
+				display: none
+	.gelios__branch-imgs, .gelios__branch-col-img
+		display: none
+	.gelios__branch
+		.list
+			.item
+				margin-top: 0 !important
+				&:after
+					display: none !important
+		.left, .right
+			float: none
+			padding-left: 0
+			width: 100%
+	.table
+		width: 100%
+		+ .row
+			.left
+				float: none
+			img
+				display: block
+				margin-left: auto
+				margin-right: auto
+				margin-bottom: 20px
+			.right
+				float: none
+				padding-left: 0 !important
+	.gelios__data
+		.col
+			width: 100%
+			float: none
+			margin-bottom: 20px
+		br
+			display: none
+		span
+			display: none
+	.gelios__result
+		h5
+			margin-bottom: 0
+
+		.col-left, .col-right
+			float: none
+			padding-left: 0
+			padding-right: 0
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 50px
+			.right, .left
+				width: 50%
+				padding-left: 5px
+				padding-right: 5px
+				box-sizing: border-box
+			img
+				display: block
+				margin-left: auto
+				margin-right: auto
+
+@media screen and (max-width: 900px)
+	.panel
+		padding-top: 10px
+		padding-bottom: 10px
+		text-align: center
+		.col
+			float: none
+	.panel__search
+		margin-top: 10px
+		margin-left: auto
+		margin-right: auto
+	.panel__contacts
+		li
+			display: block
+			text-align: center
+			margin-left: auto
+			margin-right: auto
+			line-height: 25px
+@media screen and (max-width: 850px)
+	.ecoplas__principle-list
+		.item
+			&:after
+				display: none !important
+			br
+				display: none
+			span
+				display: none
+	.list-span
+		span
+			display: none !important
+@media screen and (max-width: 800px)
+	.gelios__result
+		.col-left, .col-right
+			width: 75% !important
+@media screen and (max-width: 768px)
+	.form
+		.col
+			width: 100%
+		.left, .right
+			padding-left: 0
+			padding-right: 0
+		.button
+			width: 100%
+			display: block
+		.textarea
+			margin-bottom: 13px
+	.about__buttons
+		.button
+			width: 100%
+			margin-left: auto !important
+			margin-right: auto !important
+	.news__button
+		width: 100%
+		margin-left: auto
+		margin-right: auto
+	.icons
+		text-align: center
+		.col
+			float: none
+			display: inline-block
+			width: 100% !important
+			margin-bottom: 40px
+@media screen and (max-width: 650px)
+	.banner__description
+		font-size: 22px
+		margin-bottom: 40px
+		padding-top: 160px
+		&:before, &:after
+			display: none
+	.banner__title
+		font-size: 50px
+	.ecoplas__sphere
+		.col
+			float: none
+			width: 100%
+	.gelios__result
+		.col-left, .col-right
+			width: 100% !important
+@media screen and (max-width: 500px)
+	.table
+		font-size: 14px
+		td, th
+			padding-left: 2px
+			padding-right: 2px
+		&.hidden-last
+			td, th
+				&:last-of-type
+					display: none
+@media screen and (max-width: 400px)
+	.contacts
+		.feedback
+			display: block
+			border-bottom: none
+			margin-left: 0
+			text-decoration: underline
+	.ecoplas__comparison
+		.table
+			+ .row
+				.list
+					span
+						display: none
+				+ .row
+					.list
+						span
+							display: none
+	.gelios__result
+		h5
+			text-align: center
+		.col-left, .col-right
+			.left, .right
+				float: none
+				width: 100%
